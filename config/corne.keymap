@@ -266,10 +266,10 @@
                                  &trans         &trans     &trans       &trans  &trans  &trans
             >;
 
-            label = "NAV";
+            label = "NAVI";
         };
 
-        num_layer {
+        number_layer {
             bindings = <
 &trans        &kp ASTRK  &kp N7  &kp N8  &kp N9  &kp PLUS     &trans  &trans  &trans  &trans  &trans  &trans
 &kp NUMBER_0  &kp FSLH   &kp N4  &kp N5  &kp N6  &kp MINUS    &trans  &trans  &trans  &trans  &trans  &trans
@@ -280,7 +280,7 @@
             label = "NUMBER";
         };
 
-        hotkeys_layer {
+        settings_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LC(NUMBER_0)  &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3        &bt BT_SEL 4
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LC(PLUS)      &kp C_VOLUME_UP  &kp C_MUTE        &kp C_VOLUME_DOWN  &kp LG(LEFT_ARROW)  &out OUT_USB
@@ -288,10 +288,10 @@
                         &trans  &trans  &trans    &trans            &trans           &trans
             >;
 
-            label = "HOTKEY";
+            label = "SETTINGS";
         };
 
-        sym_layer {
+        symbols_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp PLUS   &kp MINUS     &kp AT     &kp CARET    &kp TILDE  &kp DOLLAR
 &trans  &trans  &trans  &trans  &trans  &trans    &kp EQUAL  &kp UNDER     &kp ASTRK  &kp PERCENT  &kp COLON  &kp DOUBLE_QUOTES
@@ -299,7 +299,7 @@
                         &trans  &trans  &trans    &trans     &trans        &trans
             >;
 
-            label = "SYMBOL";
+            label = "SYMBOLS";
         };
 
         locks_layer {
