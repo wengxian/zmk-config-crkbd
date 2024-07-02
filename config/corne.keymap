@@ -43,6 +43,12 @@
     combos {
         compatible = "zmk,combos";
 
+        combo_function_layer {
+            bindings = <&to 1>;
+            key-positions = <0 24 12>;
+            timeout-ms = <20>;
+        };
+
         combo_delete {
             bindings = <&kp DELETE>;
             key-positions = <1 2>;
@@ -91,6 +97,12 @@
             timeout-ms = <20>;
         };
 
+        combo_insert {
+            bindings = <&kp INSERT>;
+            key-positions = <25 26>;
+            timeout-ms = <20>;
+        };
+
         combo_less_than {
             bindings = <&kp LESS_THAN>;
             key-positions = <26 27>;
@@ -100,6 +112,12 @@
         combo_greater_than {
             bindings = <&kp GREATER_THAN>;
             key-positions = <27 28>;
+            timeout-ms = <20>;
+        };
+
+        combo_caps {
+            bindings = <&kp CAPS>;
+            key-positions = <28 29>;
             timeout-ms = <20>;
         };
 
@@ -175,6 +193,12 @@
             timeout-ms = <20>;
         };
 
+        combo_pause_break {
+            bindings = <&kp PAUSE_BREAK>;
+            key-positions = <10 9>;
+            timeout-ms = <20>;
+        };
+
         combo_enter_r {
             bindings = <&kp ENTER>;
             key-positions = <18 19>;
@@ -193,6 +217,12 @@
             timeout-ms = <20>;
         };
 
+        combo_num_lock {
+            bindings = <&kp KP_NUMLOCK>;
+            key-positions = <30 31>;
+            timeout-ms = <20>;
+        };
+
         combo_left_bracket {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <31 32>;
@@ -205,9 +235,15 @@
             timeout-ms = <20>;
         };
 
-        combo_bt_clear_profile {
+        combo_scroll_lock {
+            bindings = <&kp SCROLLLOCK>;
+            key-positions = <34 33>;
+            timeout-ms = <20>;
+        };
+
+        combo_bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <6 18 30>;
+            key-positions = <6 30 18>;
             timeout-ms = <20>;
         };
 
@@ -282,10 +318,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE   &kp Q                      &kp W                      &kp E                   &kp R                        &kp T    &kp Y  &kp U                          &kp I                            &kp O                        &kp P                           &kp DEL
-&kp TAB      &home_row_left LEFT_GUI A  &home_row_left LEFT_ALT S  &home_row_left LCTRL D  &home_row_left LEFT_SHIFT F  &kp G    &kp H  &home_row_right RIGHT_SHIFT J  &home_row_right RIGHT_CONTROL K  &home_row_right RIGHT_ALT L  &home_row_right RIGHT_GUI SEMI  &kp SQT
-&shift_caps  &kp Z                      &kp X                      &kp C                   &kp V                        &kp B    &kp N  &kp M                          &kp COMMA                        &kp DOT                      &kp FSLH                        &kp ENTER
-                                                                   &mo 1                   &lt 2 SPACE                  &mo 3    &mo 4  &lt 5 BACKSPACE                &mo 6
+&kp ESCAPE      &kp Q                      &kp W                      &kp E                   &kp R                        &kp T    &kp Y  &kp U                          &kp I                            &kp O                        &kp P                           &kp DEL
+&kp TAB         &home_row_left LEFT_GUI A  &home_row_left LEFT_ALT S  &home_row_left LCTRL D  &home_row_left LEFT_SHIFT F  &kp G    &kp H  &home_row_right RIGHT_SHIFT J  &home_row_right RIGHT_CONTROL K  &home_row_right RIGHT_ALT L  &home_row_right RIGHT_GUI SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp Z                      &kp X                      &kp C                   &kp V                        &kp B    &kp N  &kp M                          &kp COMMA                        &kp DOT                      &kp FSLH                        &kp ENTER
+                                                                      &kp LEFT_CONTROL        &lt 2 SPACE                  &mo 3    &mo 3  &lt 4 BACKSPACE                &mo 5
             >;
         };
 
@@ -302,10 +338,10 @@
 
         navigation_layer {
             bindings = <
-&trans           &kp LC(LEFT)  &kp UP     &kp LC(RIGHT)  &kp HOME   &kp PG_UP    &trans  &trans  &trans  &trans  &trans  &trans
-&kp LA(LC(TAB))  &kp LEFT      &kp DOWN   &kp RIGHT      &kp END    &kp PG_DN    &trans  &trans  &trans  &trans  &trans  &trans
-&trans           &kp LC(Z)     &kp LC(X)  &kp LC(C)      &kp LC(V)  &kp LC(Y)    &trans  &trans  &trans  &trans  &trans  &trans
-                                          &trans         &trans     &trans       &trans  &trans  &trans
+&trans  &kp LC(LEFT)  &kp UP    &kp LC(RIGHT)  &kp HOME  &kp PG_UP      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp END   &kp PG_DN      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans    &trans         &trans    &key_repeat    &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans         &trans    &trans         &trans  &trans  &trans
             >;
 
             label = "NAVI";
@@ -313,24 +349,13 @@
 
         number_layer {
             bindings = <
-&trans        &kp ASTRK  &kp N7  &kp N8  &kp N9  &kp PLUS     &trans  &trans  &trans  &trans  &trans  &trans
-&kp NUMBER_0  &kp FSLH   &kp N4  &kp N5  &kp N6  &kp MINUS    &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp DOT      &trans  &trans  &trans  &trans  &trans  &trans
-                                 &trans  &trans  &trans       &trans  &trans  &trans
+&trans        &kp ASTRK                      &kp N7  &kp N8  &kp N9  &kp PLUS     &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9                        &trans  &trans
+&kp NUMBER_0  &home_row_left LEFT_GUI SLASH  &kp N4  &kp N5  &kp N6  &kp MINUS    &trans  &kp NUMBER_4  &kp N5        &home_row_right RIGHT_ALT NUMBER_6  &trans  &kp N0
+&trans        &kp EQUAL                      &kp N1  &kp N2  &kp N3  &kp DOT      &trans  &kp N1        &kp N2        &kp N3                              &trans  &trans
+                                                     &trans  &trans  &trans       &trans  &trans        &trans
             >;
 
             label = "NUMBER";
-        };
-
-        settings_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &bt BT_SEL 0                   &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3     &bt BT_SEL 4  &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(LA(LC(LG(PAGE_UP))))    &kp C_VOLUME_DOWN  &kp C_MUTE        &kp C_VOLUME_UP  &trans        &out OUT_USB
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(LA(LC(LG(PAGE_DOWN))))  &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT       &trans        &out OUT_BLE
-                        &trans  &trans  &trans    &trans                         &trans             &trans
-            >;
-
-            label = "SETTING";
         };
 
         symbols_layer {
@@ -344,15 +369,15 @@
             label = "SYMBOL";
         };
 
-        locks_layer {
+        settings_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans   &trans  &trans  &trans  &kp PAUSE_BREAK
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp INS  &trans  &trans  &trans  &kp KP_NUMLOCK
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans   &trans  &trans  &trans  &kp SCROLLLOCK
-                        &trans  &trans  &trans    &trans  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp C_PREVIOUS     &kp C_PLAY_PAUSE  &kp C_NEXT       &trans        &out OUT_USB
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp C_VOLUME_DOWN  &kp C_MUTE        &kp C_VOLUME_UP  &trans        &out OUT_BLE
+                        &trans  &trans  &trans    &trans  &trans             &trans
             >;
 
-            label = "LOCK";
+            label = "SETTING";
         };
     };
 };
