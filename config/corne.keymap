@@ -228,18 +228,6 @@
             key-positions = <11 35>;
             timeout-ms = <20>;
         };
-
-        combo_bootloader_l {
-            bindings = <&bootloader>;
-            key-positions = <1 2 3 4 37>;
-            timeout-ms = <20>;
-        };
-
-        combo_bootloader_r {
-            bindings = <&bootloader>;
-            key-positions = <7 8 9 10 40>;
-            timeout-ms = <20>;
-        };
     };
 
     macros {
