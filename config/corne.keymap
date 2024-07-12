@@ -229,9 +229,15 @@
             timeout-ms = <20>;
         };
 
-        combo_soft_off {
+        combo_bootloader_l {
             bindings = <&bootloader>;
-            key-positions = <4 5>;
+            key-positions = <1 2 3 4 37>;
+            timeout-ms = <20>;
+        };
+
+        combo_bootloader_r {
+            bindings = <&bootloader>;
+            key-positions = <7 8 9 10 40>;
             timeout-ms = <20>;
         };
     };
