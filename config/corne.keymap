@@ -230,7 +230,7 @@
         };
 
         combo_soft_off {
-            bindings = <&soft_off>;
+            bindings = <&bootloader>;
             key-positions = <4 5>;
             timeout-ms = <20>;
         };
