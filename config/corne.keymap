@@ -96,7 +96,7 @@
                                       &ltkp 2 TAB   &ltkp 3 SPACE  &ltkp 5 DEL  &ltkp 6 DEL  &ltkp 7 BSPC  &ltkp 8 TAB
             >;
 
-            display-name = "WQWERT";
+            display-name = "WBASE";
         };
 
         mac_layer {
@@ -107,7 +107,7 @@
                                       &ltkp 2 TAB   &ltkp 4 SPACE  &ltkp 5 DEL  &ltkp 6 DEL  &ltkp 7 BSPC  &ltkp 8 TAB
             >;
 
-            display-name = "MQWERT";
+            display-name = "MBASE";
         };
 
         number_layer {
