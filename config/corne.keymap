@@ -120,7 +120,7 @@
 
         combo_bt_clear_all {
             bindings = <&bt BT_CLR_ALL>;
-            key-positions = <12 24 35>;
+            key-positions = <11 23 35>;
             timeout-ms = <COMBO_QUICK_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
