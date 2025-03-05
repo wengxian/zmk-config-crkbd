@@ -63,14 +63,6 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 32 33 34 35 40 41 39 31>;
         };
-
-        scroll_encoder: scroll_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
-
-            tap-ms = <30>;
-        };
     };
 
     combos {
@@ -222,7 +214,6 @@
             >;
 
             display-name = "QWERTY";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         mac_base_layer {
@@ -234,7 +225,6 @@
             >;
 
             display-name = "MACMINI";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         iphone_base_layer {
@@ -246,7 +236,6 @@
             >;
 
             display-name = "IPHONE";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         ipad_base_layer {
@@ -258,7 +247,6 @@
             >;
 
             display-name = "IPAD";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         number_layer {
@@ -270,7 +258,6 @@
             >;
 
             display-name = "NUMBER";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         win_navi_layer {
@@ -282,7 +269,6 @@
             >;
 
             display-name = "WNAVI";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         mac_navi_layer {
@@ -294,7 +280,6 @@
             >;
 
             display-name = "MNAVI";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         fkeys_layer {
@@ -306,7 +291,6 @@
             >;
 
             display-name = "FUNCTION";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         settings_layer {
@@ -318,7 +302,6 @@
             >;
 
             display-name = "SETTING";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         sym_layer {
@@ -330,7 +313,6 @@
             >;
 
             display-name = "SYMBOL";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         win_mouse_layer {
@@ -342,7 +324,6 @@
             >;
 
             display-name = "WMOUSE";
-            sensor-bindings = <&scroll_encoder>;
         };
 
         mac_mouse_layer {
@@ -354,7 +335,6 @@
             >;
 
             display-name = "MMOUSE";
-            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
