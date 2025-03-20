@@ -210,7 +210,7 @@
 &kp ESC    &kp Q         &kp W         &kp E          &kp R          &kp T          &kp Y        &kp U          &kp I          &kp O         &kp P            &kp GRAVE
 &kp BSPC   &hrml LGUI A  &hrml LALT S  &hrml LCTRL D  &hrml LSHFT F  &kp G          &kp H        &hrmr LSHFT J  &hrmr LCTRL K  &hrmr LALT L  &hrmr LGUI SEMI  &kp APOS
 &kp LSHFT  &kp Z         &kp X         &kp C          &kp V          &kp B          &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &kp ENTER
-                                       &ltkp 4 DEL    &ltkp 5 SPACE  &ltkp 7 TAB    &ltkp 8 TAB  &ltkp 9 BSPC   &ltkp 10 DEL
+                                       &ltkp 4 TAB    &ltkp 5 SPACE  &ltkp 7 DEL    &ltkp 8 DEL  &ltkp 9 BSPC   &ltkp 10 TAB
             >;
 
             display-name = "QWERTY";
@@ -221,7 +221,7 @@
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 DEL
+                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "MACMINI";
@@ -232,7 +232,7 @@
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 DEL
+                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "IPHONE";
@@ -243,7 +243,7 @@
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 DEL
+                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "IPAD";
