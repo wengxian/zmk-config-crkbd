@@ -78,7 +78,7 @@
 
         combo_win_mouse {
             bindings = <&tog 10>;
-            key-positions = <0 28>;
+            key-positions = <0 24>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
             layers = <0 10>;
@@ -86,7 +86,7 @@
 
         combo_mac_mouse {
             bindings = <&tog 11>;
-            key-positions = <0 28>;
+            key-positions = <0 24>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
             layers = <1 2 3 11>;
@@ -94,28 +94,28 @@
 
         combo_settings {
             bindings = <&tog 8>;
-            key-positions = <5 33>;
+            key-positions = <5 29>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
 
         combo_enter {
             bindings = <&kp ENTER>;
-            key-positions = <16 17>;
+            key-positions = <16 15>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
 
         combo_less_than {
             bindings = <&kp LT>;
-            key-positions = <30 31>;
+            key-positions = <26 27>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
 
         combo_greater_than {
             bindings = <&kp GT>;
-            key-positions = <31 32>;
+            key-positions = <27 28>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
