@@ -358,7 +358,7 @@
             bindings = <
 &trans  &kp LG(LS(LEFT))   &kp LG(LC(LA(N0)))  &kp LG(UP)     &kp LA(LC(LG(N1)))  &kp LG(LC(LEFT))     &kp LG(LC(LEFT))   &kp LG(LC(LA(N0)))  &kp LG(UP)     &kp LA(LC(LG(N1)))  &kp LG(LS(LEFT))   &trans
 &trans  &kp LG(LC(F4))     &kp LG(LEFT)        &kp LG(DOWN)   &kp LG(RIGHT)       &kp LG(LC(D))        &kp LG(LC(D))      &kp LG(LEFT)        &kp LG(DOWN)   &kp LG(RIGHT)       &kp LG(LC(F4))     &trans
-&trans  &kp LS(LG(RIGHT))  &kp LA(LC(LG(N2)))  &kp LG(HOME)   &kp LA(LC(LG(N4)))  &kp LG(LC(RIGHT))    &kp LG(LC(RIGHT))  &kp LA(LC(LG(N2)))  &kp LG(HOME)   &kp LA(LC(LG(N4)))  &kp LS(LG(RIGHT))  &trans
+&trans  &kp LS(LG(RIGHT))  &kp LA(LC(LG(N2)))  &kp LG(HOME)   &kp LA(LC(LG(N3)))  &kp LG(LC(RIGHT))    &kp LG(LC(RIGHT))  &kp LA(LC(LG(N2)))  &kp LG(HOME)   &kp LA(LC(LG(N4)))  &kp LS(LG(RIGHT))  &trans
                                                &kp LG(PG_UP)  &kp LG(LS(DOWN))    &kp LG(PG_DN)        &kp LG(PG_DN)      &kp LG(LS(DOWN))    &kp LG(PG_UP)
             >;
 
