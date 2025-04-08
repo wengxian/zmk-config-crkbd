@@ -339,10 +339,10 @@
 
         mac_win {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LA(LC(U))     &kp LA(LC(UP))    &kp LA(LC(I))      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LA(LC(LEFT))  &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LA(LC(J))     &kp LA(LC(C))     &kp LA(LC(K))      &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LA(LC(LG(LEFT)))   &kp LA(LC(U))          &kp LA(LC(UP))    &kp LA(LC(I))      &kp LA(LC(D))  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(LA(LC(UP)))     &kp LA(LC(LEFT))       &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &kp LA(LC(F))  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LA(LG(LC(RIGHT)))  &kp LA(LC(J))          &kp LA(LC(C))     &kp LA(LC(K))      &kp LC(LA(G))  &trans
+                        &trans  &trans  &trans    &kp LA(LC(ENTER))      &kp LA(LC(BACKSPACE))  &kp LG(H)
             >;
 
             label = "MWIN";
