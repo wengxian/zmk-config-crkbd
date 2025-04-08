@@ -44,10 +44,10 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
-            flavor = "tap-preferred";
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            flavor = "balanced";
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47>;
             hold-trigger-on-release;
         };
 
@@ -58,10 +58,18 @@
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "balanced";
+            hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 44>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        };
+
+        scroll_encoder: scroll_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
+
+            tap-ms = <30>;
         };
     };
 
@@ -86,28 +94,28 @@
 
         combo_settings {
             bindings = <&tog 8>;
-            key-positions = <5 29>;
+            key-positions = <5 33>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
 
         combo_enter {
             bindings = <&kp ENTER>;
-            key-positions = <15 16>;
+            key-positions = <16 17>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
 
         combo_less_than {
             bindings = <&kp LT>;
-            key-positions = <26 27>;
+            key-positions = <30 31>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
 
         combo_greater_than {
             bindings = <&kp GT>;
-            key-positions = <27 28>;
+            key-positions = <31 32>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
         };
@@ -216,10 +224,10 @@
 
         win_base_layer {
             bindings = <
-&kp ESC         &kp Q         &kp W         &kp E          &kp R          &kp T          &kp Y        &kp U          &kp I          &kp O         &kp P            &kp GRAVE
-&ltkp 10 BSPC   &hrml LGUI A  &hrml LALT S  &hrml LCTRL D  &hrml LSHFT F  &kp G          &kp H        &hrmr LSHFT J  &hrmr LCTRL K  &hrmr LALT L  &hrmr LGUI SEMI  &ltkp 12 APOS
-&kp LSHFT       &kp Z         &kp X         &kp C          &kp V          &kp B          &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &kp ENTER
-                                            &ltkp 4 TAB    &ltkp 5 SPACE  &ltkp 7 DEL    &ltkp 8 DEL  &ltkp 9 BSPC   &ltkp 10 TAB
+&kp ESC        &kp Q         &kp W         &kp E          &kp R          &kp T        &kp Y        &kp U          &kp I          &kp O         &kp P            &kp GRAVE
+&ltkp 12 BSPC  &hrml LGUI A  &hrml LALT S  &hrml LCTRL D  &hrml LSHFT F  &kp G        &kp H        &hrmr LSHFT J  &hrmr LCTRL K  &hrmr LALT L  &hrmr LGUI SEMI  &ltkp 12 APOS
+&kp LSHFT      &kp Z         &kp X         &kp C          &kp V          &kp B        &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &kp ENTER
+                                           &ltkp 4 TAB    &ltkp 5 SPACE  &ltkp 7 DEL  &ltkp 8 DEL  &ltkp 9 BSPC   &ltkp 10 TAB
             >;
 
             display-name = "QWERTY";
@@ -227,10 +235,10 @@
 
         mac_base_layer {
             bindings = <
-&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-&ltkp 11 BSPC  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
-&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                               &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
+&trans         &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &trans
+&ltkp 13 BSPC  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
+&trans         &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &trans
+                               &trans  &ltkp 6 SPACE  &trans  &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "MACMINI";
@@ -238,10 +246,10 @@
 
         iphone_base_layer {
             bindings = <
-&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-&ltkp 11 BSPC  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
-&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                               &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
+&trans         &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &trans
+&ltkp 13 BSPC  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
+&trans         &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &trans
+                               &trans  &ltkp 6 SPACE  &trans  &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "IPHONE";
@@ -249,10 +257,10 @@
 
         ipad_base_layer {
             bindings = <
-&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-&ltkp 11 BSPC  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
-&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                               &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
+&trans         &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &trans
+&ltkp 13 BSPC  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
+&trans         &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans        &trans  &trans  &trans
+                               &trans  &ltkp 6 SPACE  &trans  &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "IPAD";
@@ -260,10 +268,10 @@
 
         number_layer {
             bindings = <
-&trans  &kp ASTRK         &kp N7         &kp N8          &kp N9          &kp N0       &kp EQUAL  &kp KP_N7          &kp KP_N8          &kp KP_N9         &kp KP_N0         &kp KP_NUM
-&trans  &hrml LGUI MINUS  &hrml LALT N4  &hrml LCTRL N5  &hrml LSHFT N6  &kp PLUS     &kp COMMA  &hrmr LSHFT KP_N4  &hrmr LCTRL KP_N5  &hrmr LALT KP_N6  &hrmr LGUI ASTRK  &trans
-&trans  &kp SLASH         &kp N1         &kp N2          &kp N3          &kp EQUAL    &kp DOT    &kp KP_N1          &kp KP_N2          &kp KP_N3         &trans            &trans
-                                         &trans          &trans          &trans       &trans     &trans             &trans
+&trans  &kp ASTRK         &kp N7         &kp N8          &kp N9          &kp N0     &kp EQUAL  &kp KP_N7          &kp KP_N8          &kp KP_N9         &kp KP_N0         &kp KP_NUM
+&trans  &hrml LGUI MINUS  &hrml LALT N4  &hrml LCTRL N5  &hrml LSHFT N6  &kp PLUS   &kp COMMA  &hrmr LSHFT KP_N4  &hrmr LCTRL KP_N5  &hrmr LALT KP_N6  &hrmr LGUI ASTRK  &trans
+&trans  &kp SLASH         &kp N1         &kp N2          &kp N3          &kp EQUAL  &kp DOT    &kp KP_N1          &kp KP_N2          &kp KP_N3         &trans            &trans
+                                         &trans          &trans          &trans     &trans     &trans             &trans
             >;
 
             display-name = "NUMBER";
@@ -271,10 +279,10 @@
 
         win_navi_layer {
             bindings = <
-&trans  &kp INS                &kp HOME        &kp UP           &kp END           &kp PG_UP          &kp EQUAL  &kp N7          &kp N8          &kp N9         &kp N0            &trans
-&trans  &macro_win_select_all  &kp LEFT        &kp DOWN         &kp RIGHT         &kp PG_DN          &kp COMMA  &hrmr LSHFT N4  &hrmr LCTRL N5  &hrmr LALT N6  &hrmr LGUI ASTRK  &trans
-&trans  &macro_win_undo        &macro_win_cut  &macro_win_copy  &macro_win_paste  &macro_win_redo    &kp DOT    &kp N1          &kp N2          &kp N3         &trans            &trans
-                                               &trans           &trans            &trans             &trans     &trans          &trans
+&trans  &kp INS                &kp HOME        &kp UP           &kp END           &kp PG_UP        &kp EQUAL  &kp N7          &kp N8          &kp N9         &kp N0            &trans
+&trans  &macro_win_select_all  &kp LEFT        &kp DOWN         &kp RIGHT         &kp PG_DN        &kp COMMA  &hrmr LSHFT N4  &hrmr LCTRL N5  &hrmr LALT N6  &hrmr LGUI ASTRK  &trans
+&trans  &macro_win_undo        &macro_win_cut  &macro_win_copy  &macro_win_paste  &macro_win_redo  &kp DOT    &kp N1          &kp N2          &kp N3         &trans            &trans
+                                               &trans           &trans            &trans           &trans     &trans          &trans
             >;
 
             display-name = "WNAVI";
@@ -282,10 +290,10 @@
 
         mac_navi_layer {
             bindings = <
-&trans  &kp INS    &kp HOME   &kp UP     &kp END    &kp PG_UP        &kp EQUAL  &kp N7          &kp N8          &kp N9         &kp N0            &trans
-&trans  &kp LG(A)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN        &kp COMMA  &hrmr LSHFT N4  &hrmr LCTRL N5  &hrmr LALT N6  &hrmr LGUI ASTRK  &trans
-&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))    &kp DOT    &kp N1          &kp N2          &kp N3         &trans            &trans
-                              &trans     &trans     &trans           &trans     &trans          &trans
+&trans  &kp INS    &kp HOME   &kp UP     &kp END    &kp PG_UP      &kp EQUAL  &kp N7          &kp N8          &kp N9         &kp N0            &trans
+&trans  &kp LG(A)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN      &kp COMMA  &hrmr LSHFT N4  &hrmr LCTRL N5  &hrmr LALT N6  &hrmr LGUI ASTRK  &trans
+&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))  &kp DOT    &kp N1          &kp N2          &kp N3         &trans            &trans
+                              &trans     &trans     &trans         &trans     &trans          &trans
             >;
 
             display-name = "MNAVI";
@@ -293,10 +301,10 @@
 
         fkeys_layer {
             bindings = <
-&trans  &kp F12  &kp F7  &kp F8  &kp F9  &kp PSCRN          &trans    &trans      &trans     &trans    &trans    &trans
-&trans  &kp F11  &kp F4  &kp F5  &kp F6  &kp SLCK           &kp CAPS  &kp RSHIFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
-&trans  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &trans    &trans      &trans     &trans    &trans    &trans
-                         &trans  &trans  &trans             &trans    &trans      &trans
+&trans  &kp F12  &kp F7  &kp F8  &kp F9  &kp PSCRN        &trans    &trans      &trans     &trans    &trans    &trans
+&trans  &kp F11  &kp F4  &kp F5  &kp F6  &kp SLCK         &kp CAPS  &kp RSHIFT  &kp LCTRL  &kp LALT  &kp LGUI  &kp GLOBE
+&trans  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK  &trans    &trans      &trans     &trans    &trans    &trans
+                         &trans  &trans  &trans           &trans    &trans      &trans
             >;
 
             display-name = "FUNCTION";
@@ -304,10 +312,10 @@
 
         settings_layer {
             bindings = <
-&out OUT_TOG  &bt BT_SEL 0        &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3     &bt BT_SEL 4    &bt BT_SEL 0   &bt BT_SEL 1        &bt BT_SEL 2     &bt BT_SEL 3   &bt BT_SEL 4      &out OUT_TOG
-&bootloader   &macro_usb_default  &kp C_VOLUME_DOWN  &kp C_MUTE        &kp C_VOLUME_UP  &sys_reset      &sys_reset     &macro_usb_default  &macro_bt_macos  &macro_bt_ios  &macro_bt_ipados  &bootloader
-&caps_word    &rgb_ug RGB_TOG     &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT       &bt BT_CLR      &bt BT_DISC 0  &bt BT_DISC 1       &bt BT_DISC 2    &bt BT_DISC 3  &bt BT_DISC 4     &key_repeat
-                                                     &trans            &trans           &trans          &trans         &trans              &trans
+&out OUT_TOG  &bt BT_SEL 0        &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3     &bt BT_SEL 4  &bt BT_SEL 0   &bt BT_SEL 1        &bt BT_SEL 2     &bt BT_SEL 3   &bt BT_SEL 4      &out OUT_TOG
+&bootloader   &macro_usb_default  &kp C_VOLUME_DOWN  &kp C_MUTE        &kp C_VOLUME_UP  &sys_reset    &sys_reset     &macro_usb_default  &macro_bt_macos  &macro_bt_ios  &macro_bt_ipados  &bootloader
+&caps_word    &rgb_ug RGB_TOG     &kp C_PREV         &kp C_PLAY_PAUSE  &kp C_NEXT       &bt BT_CLR    &bt BT_DISC 0  &bt BT_DISC 1       &bt BT_DISC 2    &bt BT_DISC 3  &bt BT_DISC 4     &key_repeat
+                                                     &trans            &trans           &trans        &trans         &trans              &trans
             >;
 
             display-name = "SETTING";
@@ -315,10 +323,10 @@
 
         sym_layer {
             bindings = <
-&trans  &trans  &kp AMPS    &kp ASTRK  &kp LPAR   &kp RPAR    &kp PLUS   &kp MINUS  &kp LBRC  &kp RBRC  &trans     &kp TILDE
-&trans  &trans  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp PIPE    &kp EQUAL  &kp UNDER  &kp LBKT  &kp RBKT  &kp COLON  &kp DQT
-&trans  &trans  &kp EXCL    &kp AT     &kp HASH   &kp BSLH    &kp EXCL   &kp QMARK  &kp LT    &kp GT    &trans     &trans
-                            &trans     &trans     &trans      &trans     &trans     &trans
+&trans  &trans  &kp AMPS    &kp ASTRK  &kp LPAR   &kp RPAR  &kp PLUS   &kp MINUS  &kp LBRC  &kp RBRC  &trans     &kp TILDE
+&trans  &trans  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp PIPE  &kp EQUAL  &kp UNDER  &kp LBKT  &kp RBKT  &kp COLON  &kp DQT
+&trans  &trans  &kp EXCL    &kp AT     &kp HASH   &kp BSLH  &kp EXCL   &kp QMARK  &kp LT    &kp GT    &trans     &trans
+                            &trans     &trans     &trans    &trans     &trans     &trans
             >;
 
             display-name = "SYMBOL";
@@ -326,10 +334,10 @@
 
         win_mouse_layer {
             bindings = <
-&trans  &trans                 &msc SCRL_LEFT  &mmv MOVE_UP     &msc SCRL_RIGHT   &msc SCRL_UP       &trans  &trans          &msc SCRL_UP    &trans           &trans  &trans
-&trans  &macro_win_select_all  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &msc SCRL_DOWN     &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
-&trans  &macro_win_undo        &macro_win_cut  &macro_win_copy  &macro_win_paste  &macro_win_redo    &trans  &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
-                                               &mkp MCLK        &mkp LCLK         &mkp RCLK          &trans  &trans          &trans
+&trans  &trans                 &msc SCRL_LEFT  &mmv MOVE_UP     &msc SCRL_RIGHT   &msc SCRL_UP     &trans  &mkp MB4        &msc SCRL_UP    &mkp MB5         &trans  &trans
+&trans  &macro_win_select_all  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &msc SCRL_DOWN   &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
+&trans  &macro_win_undo        &macro_win_cut  &macro_win_copy  &macro_win_paste  &macro_win_redo  &trans  &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
+                                               &mkp LCLK        &mkp MCLK         &mkp RCLK        &trans  &trans          &trans
             >;
 
             display-name = "WMOUSE";
@@ -337,10 +345,10 @@
 
         mac_mouse_layer {
             bindings = <
-&trans  &trans     &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP      &trans  &trans          &msc SCRL_UP    &trans           &trans  &trans
-&trans  &kp LG(A)  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN    &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
-&trans  &kp LG(Z)  &kp LG(X)       &kp LG(C)       &kp LG(V)        &kp LS(LG(Z))     &trans  &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
-                                   &mkp MCLK       &mkp LCLK        &mkp RCLK         &trans  &trans          &trans
+&trans  &trans     &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP     &trans  &mkp MB4        &msc SCRL_UP    &mkp MB5         &trans  &trans
+&trans  &kp LG(A)  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN   &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
+&trans  &kp LG(Z)  &kp LG(X)       &kp LG(C)       &kp LG(V)        &kp LS(LG(Z))    &trans  &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
+                                   &mkp LCLK       &mkp MCLK        &mkp RCLK        &trans  &trans          &trans
             >;
 
             display-name = "MMOUSE";
@@ -348,10 +356,10 @@
 
         win_snap_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(LS(LEFT))   &kp LG(LC(LA(N0)))  &kp LG(UP)     &kp LA(LC(LG(N1)))  &kp LG(LC(LEFT))   &kp LG(LC(LEFT))   &kp LG(LC(LA(N0)))  &kp LG(UP)     &kp LA(LC(LG(N1)))  &kp LG(LS(LEFT))   &trans
+&trans  &kp LG(LC(F4))     &kp LG(LEFT)        &kp LG(DOWN)   &kp LG(RIGHT)       &kp LG(LC(D))      &kp LG(LC(D))      &kp LG(LEFT)        &kp LG(DOWN)   &kp LG(RIGHT)       &kp LG(LC(F4))     &trans
+&trans  &kp LS(LG(RIGHT))  &kp LA(LC(LG(N2)))  &kp LG(HOME)   &kp LA(LC(LG(N4)))  &kp LG(LC(RIGHT))  &kp LG(LC(RIGHT))  &kp LA(LC(LG(N2)))  &kp LG(HOME)   &kp LA(LC(LG(N4)))  &kp LS(LG(RIGHT))  &trans
+                                               &kp LG(PG_UP)  &kp LG(LS(DOWN))    &kp LG(PG_DN)      &kp LG(PG_DN)      &kp LG(LS(DOWN))    &kp LG(PG_UP)
             >;
 
             display-name = "WSNAP";
@@ -359,10 +367,10 @@
 
         mac_snap_layer {
             bindings = <
-&trans  &kp LA(LC(LG(LEFT)))   &kp LA(LC(U))     &kp LA(LC(UP))    &kp LA(LC(I))      &kp LA(LC(D))  &kp LA(LC(D))  &kp LA(LC(U))     &kp LA(LC(UP))    &kp LA(LC(I))      &kp LA(LC(LG(LEFT)))   &trans
-&trans  &kp LA(LC(ENTER))      &kp LA(LC(LEFT))  &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &kp LA(LC(F))  &kp LA(LC(F))  &kp LA(LC(LEFT))  &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &kp LA(LC(ENTER))      &trans
-&trans  &kp LA(LG(LC(RIGHT)))  &kp LA(LC(J))     &kp LA(LC(C))     &kp LA(LC(K))      &kp LC(LA(G))  &kp LC(LA(G))  &kp LA(LC(J))     &kp LA(LC(C))     &kp LA(LC(K))      &kp LA(LG(LC(RIGHT)))  &trans
-                                                 &kp LG(H)         &kp LA(LC(BSPC))   &kp LC(LG(F))  &kp LC(LG(F))  &kp LA(LC(BSPC))  &kp LG(H)
+&trans  &kp LA(LC(LG(LEFT)))   &kp LA(LC(U))     &kp LA(LC(UP))    &kp LA(LC(I))      &kp LC(LEFT)   &kp LC(LEFT)       &kp LA(LC(U))     &kp LA(LC(UP))    &kp LA(LC(I))      &kp LA(LC(LG(LEFT)))   &trans
+&trans  &kp LA(LC(ENTER))      &kp LA(LC(LEFT))  &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &kp LG(GRAVE)  &kp LG(GRAVE)      &kp LA(LC(LEFT))  &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &kp LA(LC(ENTER))      &trans
+&trans  &kp LA(LG(LC(RIGHT)))  &kp LA(LC(J))     &kp LG(LA(H))     &kp LA(LC(K))      &kp LC(RIGHT)  &kp LC(LA(RIGHT))  &kp LA(LC(J))     &kp LG(LA(H))     &kp LA(LC(K))      &kp LA(LG(LC(RIGHT)))  &trans
+                                                 &kp LG(H)         &kp LA(LC(BSPC))   &kp LC(LG(F))  &kp LC(LG(F))      &kp LA(LC(BSPC))  &kp LG(H)
             >;
 
             display-name = "MSNAP";
