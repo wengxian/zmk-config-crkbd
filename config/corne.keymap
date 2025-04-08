@@ -68,11 +68,20 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_mouse {
+        combo_win_mouse {
             bindings = <&tog 10>;
-            key-positions = <0 24>;
+            key-positions = <0 28>;
             timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
+            layers = <0 10>;
+        };
+
+        combo_mac_mouse {
+            bindings = <&tog 11>;
+            key-positions = <0 28>;
+            timeout-ms = <COMBO_DEFAULT_TIMEOUT_MS>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE_MS>;
+            layers = <1 2 3 11>;
         };
 
         combo_settings {
@@ -207,10 +216,10 @@
 
         win_base_layer {
             bindings = <
-&kp ESC    &kp Q         &kp W         &kp E          &kp R          &kp T          &kp Y        &kp U          &kp I          &kp O         &kp P            &kp GRAVE
-&kp BSPC   &hrml LGUI A  &hrml LALT S  &hrml LCTRL D  &hrml LSHFT F  &kp G          &kp H        &hrmr LSHFT J  &hrmr LCTRL K  &hrmr LALT L  &hrmr LGUI SEMI  &ltkp 12 SINGLE_QUOTE
-&kp LSHFT  &kp Z         &kp X         &kp C          &kp V          &kp B          &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &kp ENTER
-                                       &ltkp 4 TAB    &ltkp 5 SPACE  &ltkp 7 DEL    &ltkp 8 DEL  &ltkp 9 BSPC   &ltkp 10 TAB
+&kp ESC         &kp Q         &kp W         &kp E          &kp R          &kp T          &kp Y        &kp U          &kp I          &kp O         &kp P            &kp GRAVE
+&ltkp 10 BSPC   &hrml LGUI A  &hrml LALT S  &hrml LCTRL D  &hrml LSHFT F  &kp G          &kp H        &hrmr LSHFT J  &hrmr LCTRL K  &hrmr LALT L  &hrmr LGUI SEMI  &ltkp 12 APOS
+&kp LSHFT       &kp Z         &kp X         &kp C          &kp V          &kp B          &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &kp ENTER
+                                            &ltkp 4 TAB    &ltkp 5 SPACE  &ltkp 7 DEL    &ltkp 8 DEL  &ltkp 9 BSPC   &ltkp 10 TAB
             >;
 
             display-name = "QWERTY";
@@ -218,10 +227,10 @@
 
         mac_base_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &ltkp 12 SINGLE_QUOTE
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
+&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
+&ltkp 11 BSPC  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
+&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
+                               &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "MACMINI";
@@ -229,10 +238,10 @@
 
         iphone_base_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
+&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
+&ltkp 11 BSPC  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
+&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
+                               &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "IPHONE";
@@ -240,10 +249,10 @@
 
         ipad_base_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
-                        &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
+&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
+&ltkp 11 BSPC  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &ltkp 13 APOS
+&trans         &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans        &trans  &trans  &trans
+                               &trans  &ltkp 6 SPACE  &trans    &trans  &trans  &ltkp 11 TAB
             >;
 
             display-name = "IPAD";
@@ -337,15 +346,26 @@
             display-name = "MMOUSE";
         };
 
-        mac_win {
+        win_snap_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LA(LC(LG(LEFT)))   &kp LA(LC(U))          &kp LA(LC(UP))    &kp LA(LC(I))      &kp LA(LC(D))  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(LA(LC(UP)))     &kp LA(LC(LEFT))       &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &kp LA(LC(F))  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LA(LG(LC(RIGHT)))  &kp LA(LC(J))          &kp LA(LC(C))     &kp LA(LC(K))      &kp LC(LA(G))  &trans
-                        &trans  &trans  &trans    &kp LC(LG(F))          &kp LA(LC(BACKSPACE))  &kp LG(H)
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            label = "MWIN";
+            display-name = "WSNAP";
+        };
+
+        mac_snap_layer {
+            bindings = <
+&trans  &kp LA(LC(LG(LEFT)))   &kp LA(LC(U))     &kp LA(LC(UP))    &kp LA(LC(I))      &kp LA(LC(D))  &kp LA(LC(D))  &kp LA(LC(U))     &kp LA(LC(UP))    &kp LA(LC(I))      &kp LA(LC(LG(LEFT)))   &trans
+&trans  &kp LA(LC(ENTER))      &kp LA(LC(LEFT))  &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &kp LA(LC(F))  &kp LA(LC(F))  &kp LA(LC(LEFT))  &kp LA(LC(DOWN))  &kp LA(LC(RIGHT))  &kp LA(LC(ENTER))      &trans
+&trans  &kp LA(LG(LC(RIGHT)))  &kp LA(LC(J))     &kp LA(LC(C))     &kp LA(LC(K))      &kp LC(LA(G))  &kp LC(LA(G))  &kp LA(LC(J))     &kp LA(LC(C))     &kp LA(LC(K))      &kp LA(LG(LC(RIGHT)))  &trans
+                                                 &kp LG(H)         &kp LA(LC(BSPC))   &kp LC(LG(F))  &kp LC(LG(F))  &kp LA(LC(BSPC))  &kp LG(H)
+            >;
+
+            display-name = "MSNAP";
         };
     };
 };
